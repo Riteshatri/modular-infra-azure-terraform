@@ -1,8 +1,8 @@
 # ------------------------------------------------------------
 # Resource Group Configuration
 # ------------------------------------------------------------
-resource_group_name     = "rit-rg"     # Name of the Azure Resource Group
-resource_group_location = "East Asia" # Azure region where all resources will be deployed
+resource_group_name     = "rit-rg"       # Name of the Azure Resource Group , yeh alag hona chahiyea agar do alag alag resources ya pipelione chla rahe hai to
+resource_group_location = "North Europe" # Azure region where all resources will be deployed
 
 # ------------------------------------------------------------
 # Virtual Network Configuration
@@ -35,7 +35,7 @@ frontend_nic_ip_config_name = "rit-nic-ip-config-frontend" # IP configuration na
 # ------------------------------------------------------------
 # Frontend VM Configuration
 # ------------------------------------------------------------
-frontend_vm_name      = "rit-frontend-vm"              # VM Name
+frontend_vm_name      = "frontend"                     # VM Name
 frontend_vm_size      = "Standard_B1s"                 # VM Size (B-series)
 frontend_vm_publisher = "Canonical"                    # Image Publisher
 frontend_vm_offer     = "0001-com-ubuntu-server-jammy" # Image Offer
@@ -58,7 +58,7 @@ backend_nic_ip_config_name = "rit-nic-ip-config-backend" # IP config name
 # ------------------------------------------------------------
 # Backend VM Configuration
 # ------------------------------------------------------------
-backend_vm_name      = "rit-backend-vm"               # Backend VM name
+backend_vm_name      = "backend"                      # Backend VM name
 backend_vm_size      = "Standard_B1s"                 # Size
 backend_vm_publisher = "Canonical"                    # Image publisher
 backend_vm_offer     = "0001-com-ubuntu-server-focal" # Offer
@@ -68,34 +68,34 @@ backend_vm_version   = "latest"                       # Version
 # ------------------------------------------------------------
 # Azure SQL Server & Database
 # ------------------------------------------------------------
-sql_server_name   = "riteshserverne" # Name of Azure SQL Server
-sql_database_name = "database"         # SQL Database name
+sql_server_name   = "ritserver" # Name of Azure SQL Server , yeh bhi alag hona chahiyea.. agar do alag alag pipelines chla rahe ho to...
+sql_database_name = "database"  # SQL Database name
 
 # ------------------------------------------------------------
 # Azure Key Vault
 # ------------------------------------------------------------
-key_vault_name = "rit-key-vault" # Name of Key Vault to store secrets
+key_vault_name = "rit-key-vault-plza" # Name of Key Vault to store secrets , yeh error deta hai .. to har baar new bnana hai
 
 # ------------------------------------------------------------
 # Secrets for Frontend VM
 # ------------------------------------------------------------
 frontend_vm_admin_username_key   = "frontend-admin-username" # Key name in Key Vault
-frontend_vm_admin_username_value = "rit-frontend-vm"         # Username value
+frontend_vm_admin_username_value = "frontend"                # Username value
 frontend_vm_admin_password_key   = "frontend-admin-password" # Key name for password
-frontend_vm_admin_password_value = "ritesh@12123434"         # Password value
+frontend_vm_admin_password_value = "Ritesh@12345"            # Password value
 
 # ------------------------------------------------------------
 # Secrets for Backend VM
 # ------------------------------------------------------------
 backend_vm_admin_username_key   = "backendend-admin-username"
-backend_vm_admin_username_value = "rit-backend-vm"
+backend_vm_admin_username_value = "backend"
 backend_vm_admin_password_key   = "backend-admin-password"
-backend_vm_admin_password_value = "ritesh@12123434"
+backend_vm_admin_password_value = "Ritesh@12345"
 
 # ------------------------------------------------------------
 # Secrets for SQL Server
 # ------------------------------------------------------------
 sql_server_admin_login_key      = "sql-server-admin-login-username"
-sql_server_admin_login_value    = "rit-sql-server"
+sql_server_admin_login_value    = "server"
 sql_server_admin_password_key   = "sql-server-admin-password"
-sql_server_admin_password_value = "My@Secure1234!"
+sql_server_admin_password_value = "Ritesh@12345"

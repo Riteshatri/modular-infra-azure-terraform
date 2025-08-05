@@ -161,5 +161,16 @@ module "azurerm_key_vault_secrets_module" {
   sql_server_admin_password_key   = var.sql_server_admin_password_key
   sql_server_admin_password_value = var.sql_server_admin_password_value
 
-  depends_on = [module.azurerm_key_vault_module]
+  depends_on = [module.azurerm_key_vault_module, module.resource_group]
+}
+
+
+module "sql_firewall_rule" {
+  source                    = "../azurerm_mssql_firewall_rule"
+  resource_group_name       = module.resource_group.resource_group_name
+  sql_server_id             = module.sql_server_module.sql_server_id_output_block
+  sql_server_name           = module.sql_server_module.sql_server_output_block
+  backend_public_ip_address = module.backend-public-ip.public_ip_address_value
+  backend_public_ip_name    = var.backend_public_ip_name
+  depends_on                = [module.sql_server_module, module.backend-public-ip]
 }

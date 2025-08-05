@@ -14,9 +14,9 @@ provider "azurerm" {
 
 terraform {
   backend "azurerm" {
-    resource_group_name  = "ritkargp"
-    storage_account_name = "ritkasap"
-    container_name       = "ritkascp"
-    key                  = "main.tfstate"
+    resource_group_name  = "ritkargs"
+    storage_account_name = "ritkasas"
+    container_name       = "ritkascs"
+    key                  = "datablock.tfstate"
   }
 }
